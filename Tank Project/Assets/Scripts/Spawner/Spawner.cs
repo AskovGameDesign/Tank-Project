@@ -30,13 +30,13 @@ public class Spawner : MonoBehaviour
 
 				spawnObject.transform.localPosition = Vector3.zero;
 			}
-			yield return new WaitForSeconds(Random.Range(3, 20));
+			yield return new WaitForSeconds(Random.Range(5, 30));
 			randomNumber = GetRandomNumber();
 		}
 	}
 
 	int GetRandomNumber()
 	{
-		return Random.Range(0, 51);
+		return Random.Range(0, 101);
 	}
 }
