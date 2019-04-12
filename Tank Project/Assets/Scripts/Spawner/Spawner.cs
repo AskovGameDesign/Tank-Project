@@ -24,19 +24,19 @@ public class Spawner : MonoBehaviour
 			{
 
 
-				int randomIndex = Random.Range(0, spawnManager.spawnPositions.Length);
-				GameObject spawnObject = Instantiate(spawnManager.spawnObjects[Random.Range(0, spawnManager.spawnObjects.Length)], transform.position, Quaternion.identity);
+				int randomIndex = Random.Range(0, spawnManager.spawnObjects.Length);
+				GameObject spawnObject = Instantiate(spawnManager.spawnObjects[randomIndex], transform.position, Quaternion.identity);
 				spawnObject.transform.parent = transform;
 
 				spawnObject.transform.localPosition = Vector3.zero;
 			}
-			yield return new WaitForSeconds(Random.Range(5, 30));
+			yield return new WaitForSeconds(Random.Range(3, 20));
 			randomNumber = GetRandomNumber();
 		}
 	}
 
 	int GetRandomNumber()
 	{
-		return Random.Range(0, 101);
+		return Random.Range(0, 51);
 	}
 }

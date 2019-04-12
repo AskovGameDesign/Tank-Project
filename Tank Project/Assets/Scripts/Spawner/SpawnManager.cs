@@ -22,12 +22,18 @@ public class SpawnManager : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		if (spawnPositions == null)
+
+        spawnPositions = GetComponentsInChildren<Transform>();
+
+        if (spawnPositions == null)
 			return;
 
-		for (int i = 0; i < spawnPositions.Length; i++)
+        Gizmos.color = new Color(0.5f, 1f, 1f, 0.5f);
+
+        for (int i = 0; i < spawnPositions.Length; i++)
 		{
-			Gizmos.DrawCube(spawnPositions[i].position, Vector3.one * gizmoSize);
+            if (spawnPositions[i] != this.transform)
+                Gizmos.DrawCube(spawnPositions[i].position, Vector3.one * gizmoSize);
 		}
 	}
 }
