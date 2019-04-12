@@ -23,7 +23,7 @@ public class Explosion : MonoBehaviour
 			{
 				rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
 
-				Tank tank = rb.GetComponent<Tank>();
+				Tank tank = rb.GetComponentInParent<Tank>();
 
 				if (tank)
 				{
