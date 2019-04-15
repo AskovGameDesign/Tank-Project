@@ -6,7 +6,9 @@ public class Projectile : MonoBehaviour
 {
 	public float speed = 5;
 	public int damageGiven = 1;
-	bool canReflect = true;
+
+
+    bool canReflect = true;
 	public GameObject explosionPrefab;
 	Rigidbody rb;
 	Vector3 projectileDirection;
@@ -37,15 +39,19 @@ public class Projectile : MonoBehaviour
 	{
 		ContactPoint cp = collision.contacts[0];
 
-		if (cp.otherCollider.CompareTag("Player"))
+        hitNormal = cp.normal;
+        hitPoint = cp.point;
+
+        if (cp.otherCollider.CompareTag("Player"))
 		{
-			Instantiate(explosionPrefab, cp.thisCollider.transform.position, Quaternion.identity);
-			Destroy(gameObject);
-		}
+			GameObject explosion = Instantiate(explosionPrefab, cp.thisCollider.transform.position, Quaternion.identity);
+            Explosion explodeScript = explosion.GetComponent<Explosion>();
+			
+            explodeScript.Explode(hitPoint);
+            Destroy(gameObject);
+        }
 
-		hitNormal = cp.normal;
-		hitPoint = cp.point;
-
+		
 		collider.enabled = false;
 		updateProjectile = false;
 
@@ -64,5 +70,7 @@ public class Projectile : MonoBehaviour
 		yield return new WaitForSeconds(_delay);
 		collider.enabled = true;
 	}
+
+    
 
 }

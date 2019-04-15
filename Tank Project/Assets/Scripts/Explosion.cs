@@ -11,17 +11,17 @@ public class Explosion : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Explode()
+    public void Explode(Vector3 _explosionCenter)
     {
 		Collider[] allRBSInExplosionRadius = Physics.OverlapSphere(transform.position, explosionRadius);
 
 		foreach(Collider col in allRBSInExplosionRadius)
 		{
 			Rigidbody rb = col.GetComponent<Rigidbody>();
-			Debug.Log("Hit " + col.name);
+			
 			if (col.CompareTag("Player") && rb != null)
 			{
-				rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+				rb.AddExplosionForce(explosionForce, _explosionCenter, explosionRadius);
 
 				Tank tank = rb.GetComponentInParent<Tank>();
 
@@ -33,10 +33,7 @@ public class Explosion : MonoBehaviour
 		}
     }
 
-	private void Start()
-	{
-		Explode();
-	}
+	
 
 	private void OnDrawGizmos()
 	{

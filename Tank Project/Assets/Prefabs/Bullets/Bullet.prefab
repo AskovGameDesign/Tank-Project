@@ -109,6 +109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   damageGiven: 1
+  explosionRadius: 3
+  explosionDamage: 1
+  explosionForce: 5000
   explosionPrefab: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
     type: 3}
 --- !u!54 &4391311825780523104
