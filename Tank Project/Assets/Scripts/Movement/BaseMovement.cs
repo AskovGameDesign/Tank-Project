@@ -5,7 +5,8 @@ using UnityEngine;
 public class BaseMovement : MonoBehaviour
 {
 	public float speed = 5;
-	public float rotationSpeed = 50;
+	public float tankRotationSpeed = 50;
+    public float turretRotationSpeed = 120f;
 	public GameObject turret;
 	string horizontalMovementAxis, verticalMovementAxis, horizontalTurretAxis;
 	float horizontalMovement, verticalMovement, horizontalTurret;
@@ -33,7 +34,7 @@ public class BaseMovement : MonoBehaviour
 
 		if (turret)
 		{
-			float turretRotation = horizontalTurret * rotationSpeed * Time.deltaTime;
+			float turretRotation = horizontalTurret * turretRotationSpeed * Time.deltaTime;
 			Quaternion tr = Quaternion.Euler(0f, turretRotation, 0f);
 
 			turret.transform.localRotation *= tr;
@@ -46,7 +47,7 @@ public class BaseMovement : MonoBehaviour
 		Vector3 tankMovement = transform.forward * verticalMovement * speed * Time.deltaTime;
 		rb.MovePosition(rb.position + tankMovement);
 
-		float tankRotation = horizontalMovement * rotationSpeed * Time.deltaTime;
+		float tankRotation = horizontalMovement * tankRotationSpeed * Time.deltaTime;
 		Quaternion deltarotation = Quaternion.Euler(0f, tankRotation, 0f);
 		rb.MoveRotation(rb.rotation * deltarotation);
 	}

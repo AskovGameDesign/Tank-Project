@@ -12,26 +12,29 @@ public class Tank : MonoBehaviour
 	public PlayerId playerId = PlayerId.P1;
 
 	public float health = 3;
-
+    public GameObject tankBase;
 	public GameObject diePrefab;
 
 
 
-		public void TakeDamage(int amount)
+	public void TakeDamage(int amount)
+	{
+		health -= amount;
+		if (health <= 0)
 		{
-			health -= amount;
-			if (health <= 0)
-			{
-				Die();
-			}
+			Die();
 		}
+	}
 
 	
 
-		void Die()
-		{
-		Instantiate(diePrefab, transform.position, Quaternion.identity);
-			Destroy(gameObject);
-		}
+	void Die()
+	{
+        if (tankBase == null)
+            return;
+
+        Instantiate(diePrefab, tankBase.transform.position, Quaternion.identity);
+		Destroy(gameObject);
+	}
 		
 }

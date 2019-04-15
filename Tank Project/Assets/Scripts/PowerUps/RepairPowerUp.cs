@@ -11,16 +11,16 @@ public class RepairPowerUp : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
 		sphereCollider = GetComponent<SphereCollider>();
     }
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.GetComponent<Tank>())
+		if (other.GetComponentInParent<Tank>())
 		{
-			other.GetComponent<Tank>().health += repairAmount;
+			other.GetComponentInParent<Tank>().health += repairAmount;
 			//her instantiatter vi onPickUpMagickStuffPrefab;
 			Destroy(gameObject);
 		}
