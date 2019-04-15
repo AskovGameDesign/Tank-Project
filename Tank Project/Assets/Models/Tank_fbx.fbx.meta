@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: deb92f2588183774d914a7f0e30497af
+guid: f34d7c01237cd4547b606cb4d63fe9e6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Tank_Lid
-    100004: Tank_Wheels
-    100006: WILLPII_69
-    100008: Tank_Base
-    100010: Tank_Turret
-    400000: //RootNode
-    400002: Tank_Lid
-    400004: Tank_Wheels
-    400006: WILLPII_69
-    400008: Tank_Base
-    400010: Tank_Turret
-    2100000: Material_001
-    2100002: Material_003
-    2100004: Material_005
-    2100006: Material_002
-    2300000: Tank_Lid
-    2300002: Tank_Wheels
-    2300004: WILLPII_69
+    100000: Camera
+    100002: Tank Lid
+    100004: Tank Wheels
+    100006: //RootNode
+    100008: Tank Turret
+    100010: Tank_Base
+    400000: Camera
+    400002: Tank Lid
+    400004: Tank Wheels
+    400006: //RootNode
+    400008: Tank Turret
+    400010: Tank_Base
+    2000000: Camera
+    2100000: Material.001
+    2100002: Material.003
+    2100004: Material.005
+    2100006: Material.002
+    2300000: Tank Lid
+    2300002: Tank Wheels
+    2300004: Tank Turret
     2300006: Tank_Base
-    2300008: Tank_Turret
-    3300000: Tank_Lid
-    3300002: Tank_Wheels
-    3300004: WILLPII_69
+    3300000: Tank Lid
+    3300002: Tank Wheels
+    3300004: Tank Turret
     3300006: Tank_Base
-    3300008: Tank_Turret
-    4300000: Tank_Lid
-    4300002: WILLPII_69
-    4300004: Tank_Wheels
-    4300006: Tank_Turret
-    4300008: Tank_Base
-    7400000: Default Take
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
-  externalObjects: {}
+    4300000: Tank Lid
+    4300002: Tank Wheels
+    4300004: Tank Turret
+    4300006: Tank_Base
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: d3c0671ca73667349955fa8bbc1619e4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -90,7 +90,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -114,7 +114,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
