@@ -29,6 +29,8 @@ public class Tank : MonoBehaviour
 		{
 			Die();
 		}
+
+        gameManager.UpdateUIText();
 	}
 
 	public string PlayerName()

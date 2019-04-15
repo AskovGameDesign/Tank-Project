@@ -7,7 +7,9 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public TMPro.TMP_Text winnerText;
-
+    
+    
+    public TankUISettings[] tankSettings;
     Tank[] tanks;
     List<Tank> allTanks = new List<Tank>();
     
@@ -19,6 +21,11 @@ public class GameManager : MonoBehaviour
         foreach (var t in tanks)
         {
             allTanks.Add(t);
+        }
+
+        for (int i = 0; i < tankSettings.Length; i++)
+        {
+            tankSettings[i].Init();
         }
     }
 
@@ -52,7 +59,47 @@ public class GameManager : MonoBehaviour
             winnerText.gameObject.SetActive(true);
             winnerText.text = "Match winner " + GetWinnerName();
         }
+    }
 
-        
+    public void UpdateUIText()
+    {
+        for (int i = 0; i < tankSettings.Length; i++)
+        {
+            tankSettings[i].UpdateUIText();
+        }
+    }
+
+    [System.Serializable]
+    public class TankUISettings
+    {
+        public Color tankColor = Color.red;
+        public string tankUIName = "Red Tank";
+        public TMP_Text tankUIText;
+        public Material tankMaterial;
+        public Tank tankScript;
+
+        TankUISettings()
+        {
+
+        }
+
+        public void Init()
+        {
+            UpdateUIText();
+
+            if (tankMaterial)
+                tankMaterial.color = tankColor;
+
+        }
+
+        public void UpdateUIText()
+        {
+            if (tankUIText)
+            {
+                tankUIText.text = tankUIName + System.Environment.NewLine + "Hp = " + tankScript.health;
+                tankUIText.color = tankColor;
+            }
+        }
+           
     }
 }
