@@ -24,7 +24,8 @@ public class Tank : MonoBehaviour
 
     public void TakeDamage(int amount)
 	{
-		health -= amount;
+		health += amount;
+
 		if (health <= 0)
 		{
 			Die();

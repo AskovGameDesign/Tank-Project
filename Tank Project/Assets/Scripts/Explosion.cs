@@ -27,7 +27,7 @@ public class Explosion : MonoBehaviour
 
 				if (tank)
 				{
-					tank.TakeDamage(explosionDamage);
+					tank.TakeDamage(-explosionDamage);
 				}
 			}
 		}

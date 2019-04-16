@@ -20,7 +20,7 @@ public class RepairPowerUp : MonoBehaviour
 	{
 		if (other.GetComponentInParent<Tank>())
 		{
-			other.GetComponentInParent<Tank>().health += repairAmount;
+            other.GetComponentInParent<Tank>().TakeDamage(repairAmount);
 			//her instantiatter vi onPickUpMagickStuffPrefab;
 			Destroy(gameObject);
 		}
