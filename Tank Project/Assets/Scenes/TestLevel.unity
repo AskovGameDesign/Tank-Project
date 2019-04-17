@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -466,6 +466,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: playerId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1690643855553896619, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -504,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 1690643855553896619, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1690643855553896619, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
@@ -520,11 +525,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: playerId
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1690643855551603273, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
@@ -578,7 +578,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422632237}
-  - component: {fileID: 422632236}
   - component: {fileID: 422632238}
   m_Layer: 0
   m_Name: GameManager
@@ -587,18 +586,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &422632236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422632235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e032a967ea1645f086bb496b7ec72e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &422632237
 Transform:
   m_ObjectHideFlags: 0
@@ -744,14 +731,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4f3bd152dc892b348ab7b9a6dded37f1, type: 2}
     - target: {fileID: 1690643855551603273, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f3bd152dc892b348ab7b9a6dded37f1, type: 2}
+    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 4f3bd152dc892b348ab7b9a6dded37f1, type: 2}
     m_RemovedComponents: []
@@ -779,6 +766,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tank (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: playerId
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1690643855553896619, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
@@ -835,19 +827,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: playerId
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8bca0d70280d5f04fbdbef432234ce3d, type: 2}
     - target: {fileID: 1690643855551603273, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bca0d70280d5f04fbdbef432234ce3d, type: 2}
+    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 8bca0d70280d5f04fbdbef432234ce3d, type: 2}
     m_RemovedComponents: []
@@ -1191,7 +1178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &993621073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1206,10 +1193,10 @@ RectTransform:
   m_Father: {fileID: 2101854751}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 844, y: 50}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &993621074
 MonoBehaviour:
@@ -1261,11 +1248,11 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 205.7
-  m_fontSizeBase: 205.7
+  m_fontSize: 164.9
+  m_fontSizeBase: 164.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_fontSizeMin: 30
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_textAlignment: 514
@@ -1279,7 +1266,7 @@ MonoBehaviour:
   m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1430,6 +1417,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: playerId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1690643855553896619, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1485,19 +1477,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: playerId
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: b9181061bbe207348a12854fa9cb400c, type: 2}
     - target: {fileID: 1690643855551603273, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b9181061bbe207348a12854fa9cb400c, type: 2}
+    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: b9181061bbe207348a12854fa9cb400c, type: 2}
     m_RemovedComponents: []
@@ -2545,7 +2532,7 @@ RectTransform:
   - {fileID: 790263367}
   - {fileID: 936159213}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

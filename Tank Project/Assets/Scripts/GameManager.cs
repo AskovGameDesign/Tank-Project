@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public TankUISettings[] tankSettings;
     Tank[] tanks;
     List<Tank> allTanks = new List<Tank>();
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +25,12 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < tankSettings.Length; i++)
         {
+            tankSettings[i].tankUIName = "Player " + (i + 1);
             tankSettings[i].Init();
+
         }
+
+        winnerText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,8 +38,6 @@ public class GameManager : MonoBehaviour
     {
         
     }
-
-    
 
     public string GetWinnerName()
     {
@@ -51,13 +53,14 @@ public class GameManager : MonoBehaviour
     {
         allTanks.Remove(_tank);
 
+
         if (allTanks.Count == 1)
         {
             // Only onetank alive
             Debug.Log("Winner tank is " + allTanks[0].playerId);
 
             winnerText.gameObject.SetActive(true);
-            winnerText.text = "Match winner " + GetWinnerName();
+            winnerText.text = "Match winner " + System.Environment.NewLine + GetWinnerName();
         }
     }
 
@@ -65,6 +68,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < tankSettings.Length; i++)
         {
+
             tankSettings[i].UpdateUIText();
         }
     }
@@ -96,7 +100,11 @@ public class GameManager : MonoBehaviour
         {
             if (tankUIText)
             {
-                tankUIText.text = tankUIName + System.Environment.NewLine + "Hp = " + tankScript.health;
+                if(tankScript.health > 0)
+                    tankUIText.text = tankUIName + System.Environment.NewLine + "Hp = " + tankScript.health;
+                else
+                    tankUIText.text = tankUIName + System.Environment.NewLine + "DEAD";
+
                 tankUIText.color = tankColor;
             }
         }
