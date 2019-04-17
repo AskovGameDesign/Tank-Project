@@ -466,6 +466,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: playerId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1690643855553896619, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -520,11 +525,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: playerId
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1690643855551603273, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
@@ -744,16 +744,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4f3bd152dc892b348ab7b9a6dded37f1, type: 2}
     - target: {fileID: 1690643855551603273, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4f3bd152dc892b348ab7b9a6dded37f1, type: 2}
+    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f3bd152dc892b348ab7b9a6dded37f1, type: 2}
+    - target: {fileID: 1690643855616821879, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690643855616821879, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: tankRotationSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690643855616821879, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: turretRotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f308eb6e5ee200478af1b7cf6f197bf, type: 3}
 --- !u!114 &668792494 stripped
@@ -779,6 +794,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tank (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: playerId
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1690643855553896619, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
@@ -835,19 +855,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: playerId
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8bca0d70280d5f04fbdbef432234ce3d, type: 2}
     - target: {fileID: 1690643855551603273, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bca0d70280d5f04fbdbef432234ce3d, type: 2}
+    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 8bca0d70280d5f04fbdbef432234ce3d, type: 2}
     m_RemovedComponents: []
@@ -1430,6 +1445,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: playerId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1690643855553896619, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1485,19 +1505,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1690643857024812079, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: playerId
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: b9181061bbe207348a12854fa9cb400c, type: 2}
     - target: {fileID: 1690643855551603273, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b9181061bbe207348a12854fa9cb400c, type: 2}
+    - target: {fileID: 1690643855551603275, guid: 7f308eb6e5ee200478af1b7cf6f197bf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: b9181061bbe207348a12854fa9cb400c, type: 2}
     m_RemovedComponents: []
