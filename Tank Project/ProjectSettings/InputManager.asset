@@ -51,7 +51,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 1
   - serializedVersion: 3
     m_Name: P2_TR
@@ -67,7 +67,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 2
   - serializedVersion: 3
     m_Name: P3_TR
@@ -83,7 +83,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 3
   - serializedVersion: 3
     m_Name: P4_TR
@@ -99,7 +99,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 4
   - serializedVersion: 3
     m_Name: P2_HM
