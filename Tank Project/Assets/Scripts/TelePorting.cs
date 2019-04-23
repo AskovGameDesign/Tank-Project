@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class TelePorting : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-	private void OnCollisionEnter(Collision collision)
+	public GameObject destination;
+
+
+	private void OnTriggerEnter(Collider other)
 	{
-		
+		if(other.tag == "Player")
+		{
+			other.transform.position = destination.transform.position;
+		}
 	}
 
 
