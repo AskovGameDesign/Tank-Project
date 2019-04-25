@@ -11,6 +11,8 @@ public class BaseMovement : MonoBehaviour
 	string horizontalMovementAxis, verticalMovementAxis, horizontalTurretAxis;
 	float horizontalMovement, verticalMovement, horizontalTurret;
 	Rigidbody rb;
+    [HideInInspector]
+    public bool hitByExplosion = false;
 
 	Tank tankStats;
 
@@ -19,6 +21,7 @@ public class BaseMovement : MonoBehaviour
     {
 		rb = GetComponent<Rigidbody>();
 		tankStats = GetComponentInParent<Tank>();
+        StartCoroutine(CheckTankVelocity());
     }
 
 	private void Update()
@@ -27,7 +30,9 @@ public class BaseMovement : MonoBehaviour
 		{
 			return;
 		}
-		
+        if (hitByExplosion)
+            return;
+
         horizontalMovement = Input.GetAxis( tankStats.playerId.ToString() + "_HM");
 		verticalMovement = -Input.GetAxis( tankStats.playerId.ToString() + "_VM");
 		horizontalTurret = Input.GetAxis( tankStats.playerId.ToString() + "_TR");
@@ -44,11 +49,30 @@ public class BaseMovement : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
     {
-		Vector3 tankMovement = transform.forward * verticalMovement * speed * Time.deltaTime;
+        if (hitByExplosion)
+            return;
+
+        Vector3 tankMovement = transform.forward * verticalMovement * speed * Time.deltaTime;
 		rb.MovePosition(rb.position + tankMovement);
 
 		float tankRotation = horizontalMovement * tankRotationSpeed * Time.deltaTime;
 		Quaternion deltarotation = Quaternion.Euler(0f, tankRotation, 0f);
 		rb.MoveRotation(rb.rotation * deltarotation);
 	}
+
+    IEnumerator CheckTankVelocity()
+    {
+
+        while (true)
+        {
+            Debug.Log("Tank velocity " + rb.velocity.magnitude);
+            if (rb.velocity.magnitude == 0f)
+            {
+                hitByExplosion = false;
+            }
+            yield return null;
+        }
+       
+    }
+
 }

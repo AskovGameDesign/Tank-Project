@@ -18692,7 +18692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRadius: 6
   explosionDamage: 1
-  explosionForce: 2500
+  explosionForce: 10000
 --- !u!82 &5956900115026799085
 AudioSource:
   m_ObjectHideFlags: 0

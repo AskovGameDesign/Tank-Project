@@ -21,14 +21,16 @@ public class Explosion : MonoBehaviour
 			
 			if (col.CompareTag("Player") && rb != null)
 			{
-				rb.AddExplosionForce(explosionForce, _explosionCenter, explosionRadius);
+                Tank tank = rb.GetComponentInParent<Tank>();
 
-				Tank tank = rb.GetComponentInParent<Tank>();
+                if (tank)
+                {
+                    tank.TakeDamage(-explosionDamage);
+                }
 
-				if (tank)
-				{
-					tank.TakeDamage(-explosionDamage);
-				}
+                rb.AddExplosionForce(explosionForce, _explosionCenter, explosionRadius);
+
+				
 			}
 		}
     }

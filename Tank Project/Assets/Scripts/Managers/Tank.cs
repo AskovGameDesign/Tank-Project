@@ -16,10 +16,12 @@ public class Tank : MonoBehaviour
 	public GameObject diePrefab;
 
     GameManager gameManager;
+    BaseMovement tankMovementScript;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        tankMovementScript = GetComponentInChildren<BaseMovement>();
     }
 
     public void TakeDamage(int amount)
@@ -32,6 +34,9 @@ public class Tank : MonoBehaviour
 		}
 
         gameManager.UpdateUIText();
+
+        if(amount < 0)
+            tankMovementScript.hitByExplosion = true;
 	}
 
 	public string PlayerName()
