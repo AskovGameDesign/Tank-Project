@@ -25,12 +25,9 @@ public class TelePortGameMode : MonoBehaviour
 
     private void GameManager_OnTankDied(Tank tankWhoShot, Tank tankWhoDied)
     {
-        if (tankScript)
-        {
-            if(tankWhoShot == tankScript)
-            {
-                tankScript.tankBase.transform.position = tankWhoDied.tankBase.transform.position;
-            }
+        if (tankScript && tankWhoShot == tankScript)
+        {  
+			tankScript.tankBase.transform.position = tankWhoDied.tankBase.transform.position;    
         }
     }
 }
