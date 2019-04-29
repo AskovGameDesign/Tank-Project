@@ -65,7 +65,7 @@ public class BaseMovement : MonoBehaviour
 
         while (true)
         {
-            Debug.Log("Tank velocity " + rb.velocity.magnitude);
+            
             if (rb.velocity.magnitude == 0f)
             {
                 hitByExplosion = false;

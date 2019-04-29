@@ -4,17 +4,30 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-	public float speed = 5;
+	public float speed = 15;
 	public int damageGiven = 1;
 
-
-    bool canReflect = true;
 	public GameObject explosionPrefab;
 	Rigidbody rb;
 	Vector3 projectileDirection;
-	Collider collider;
+	Collider col;
 	Vector3 hitNormal, hitPoint, newProjectileDirection;
 	bool updateProjectile = true;
+
+    Tank shooter;
+
+    public Tank Shooter
+    {
+        get
+        {
+            return shooter;
+        }
+
+        set
+        {
+            shooter = value;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +36,9 @@ public class Projectile : MonoBehaviour
 
 		projectileDirection = transform.forward;
 
-		collider = GetComponent<Collider>();
+		col = GetComponent<Collider>();
     }
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -46,13 +60,16 @@ public class Projectile : MonoBehaviour
 		{
 			GameObject explosion = Instantiate(explosionPrefab, cp.thisCollider.transform.position, Quaternion.identity);
             Explosion explodeScript = explosion.GetComponent<Explosion>();
-			
+
+            Tank tankWhoGotHit = cp.otherCollider.GetComponentInParent<Tank>();
+            if (tankWhoGotHit)
+                tankWhoGotHit.tankWhoShotMe = shooter;
+
             explodeScript.Explode(hitPoint);
             Destroy(gameObject);
         }
-
 		
-		collider.enabled = false;
+		col.enabled = false;
 		updateProjectile = false;
 
 		newProjectileDirection = Vector3.Reflect(projectileDirection.normalized, hitNormal.normalized);
@@ -64,11 +81,12 @@ public class Projectile : MonoBehaviour
 		projectileDirection = newProjectileDirection;
 		updateProjectile = true;
 		StartCoroutine(EnableCollider(0.1f));
-	}
+
+    }
 	IEnumerator EnableCollider(float _delay)
 	{
 		yield return new WaitForSeconds(_delay);
-		collider.enabled = true;
+		col.enabled = true;
 	}
 
     

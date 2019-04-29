@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,11 +8,17 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public TMPro.TMP_Text winnerText;
-    
-    
+
+    public delegate void ATankDied(Tank tankWhoShot, Tank tankWhoDied);
+    public static event ATankDied OnTankDied;
+
+
     public TankUISettings[] tankSettings;
     Tank[] tanks;
     List<Tank> allTanks = new List<Tank>();
+
+    public bool gameMode_Telportatians = false;
+    public GameObject tPGameModePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +28,11 @@ public class GameManager : MonoBehaviour
         foreach (var t in tanks)
         {
             allTanks.Add(t);
+
+            if (gameMode_Telportatians)
+            {
+                Instantiate(tPGameModePrefab, t.transform);
+            }
         }
 
         for (int i = 0; i < tankSettings.Length; i++)
@@ -31,6 +43,8 @@ public class GameManager : MonoBehaviour
         }
 
         winnerText.gameObject.SetActive(false);
+
+
     }
 
     // Update is called once per frame
@@ -49,10 +63,9 @@ public class GameManager : MonoBehaviour
             return "DRAW";
     }
 
-    public void TankDied(Tank _tank)
+    public void TankDied(Tank tankWhoDied, Tank tankWhoShot)
     {
-        allTanks.Remove(_tank);
-
+        allTanks.Remove(tankWhoDied);
 
         if (allTanks.Count == 1)
         {
@@ -61,6 +74,11 @@ public class GameManager : MonoBehaviour
 
             winnerText.gameObject.SetActive(true);
             winnerText.text = "Match winner " + System.Environment.NewLine + GetWinnerName();
+        }
+
+        if (gameMode_Telportatians && OnTankDied != null)
+        {
+            OnTankDied(tankWhoShot, tankWhoDied);
         }
     }
 
@@ -107,7 +125,6 @@ public class GameManager : MonoBehaviour
 
                 tankUIText.color = tankColor;
             }
-        }
-           
+        }    
     }
 }

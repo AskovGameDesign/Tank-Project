@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Tank : MonoBehaviour
 {
-	
 	public enum PlayerId
 	{
 		P1, P2, P3, P4
@@ -17,6 +16,9 @@ public class Tank : MonoBehaviour
 
     GameManager gameManager;
     BaseMovement tankMovementScript;
+
+    [HideInInspector]
+    public Tank tankWhoShotMe;
 
     private void Start()
     {
@@ -61,7 +63,7 @@ public class Tank : MonoBehaviour
 
         Instantiate(diePrefab, tankBase.transform.position, Quaternion.identity);
 
-        if (gameManager) gameManager.TankDied(this);
+        if (gameManager) gameManager.TankDied(this, tankWhoShotMe);
 
 		Destroy(gameObject);
 	}

@@ -10,9 +10,9 @@ public class TelePorting : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if(other.tag == "Player")
+		if(other.tag == "Player" || other.tag == "Bullet")
 		{
-			other.transform.position = destination.transform.position;
+			other.transform.position = new Vector3(destination.transform.position.x, other.transform.position.y, destination.transform.position.z);
 		}
 	}
 

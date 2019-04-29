@@ -218,8 +218,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
+  m_Constraints: 84
+  m_CollisionDetection: 1
 --- !u!65 &1690643855616821770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -249,6 +249,7 @@ MonoBehaviour:
   tankRotationSpeed: 90
   turretRotationSpeed: 120
   turret: {fileID: 1690643855553805445}
+  hitByExplosion: 0
 --- !u!1 &1690643855553805451
 GameObject:
   m_ObjectHideFlags: 0
