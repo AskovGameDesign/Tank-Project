@@ -7,7 +7,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public TMPro.TMP_Text winnerText;
+    public TMP_Text winnerText;
 
     public delegate void ATankDied(Tank tankWhoShot, Tank tankWhoDied);
     public static event ATankDied OnTankDied;
